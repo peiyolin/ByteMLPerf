@@ -11,45 +11,45 @@ mkdir -p general_perf/download
 # https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/bert_mhlo.tar
 # https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/resnet50_mhlo.tar
 
-if [ $1 == "bert-tf-fp32" -o $1 == "bert-torch-fp32" ]; then
+if [ $1 == "bert-tf-fp32" -o $1 == "bert-torch-fp32" -o $1 == "bert-tf-fp16" -o $1 == "bert-torch-fp16"]; then
     wget -O general_perf/download/open_bert.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_bert.tar
     tar xf general_perf/download/open_bert.tar -C general_perf/model_zoo/regular/
-elif [ $1 == "resnet50-tf-fp32" -o $1 == "resnet50-torch-fp32" ]; then
+elif [ $1 == "resnet50-tf-fp32" -o $1 == "resnet50-torch-fp32" -o $1 == "resnet50-tf-fp16" -o $1 == "resnet50-torch-fp16"]; then
     wget -O general_perf/download/resnet50.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/resnet50.tar
     tar xf general_perf/download/resnet50.tar -C general_perf/model_zoo/regular/
-elif [ $1 == "widedeep-tf-fp32" ]; then
+elif [ $1 == "widedeep-tf-fp32" -o $1 == "widedeep-tf-fp16" ]; then
     wget -O general_perf/download/open_wide_deep.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_wide_deep_saved_model.tar
     tar xf general_perf/download/open_wide_deep.tar -C general_perf/model_zoo/regular/
 #--Popular Model--
-elif [ $1 == "albert-torch-fp32" ]; then
+elif [ $1 == "albert-torch-fp32" -o $1 == "albert-torch-fp16" ]; then
     wget -O general_perf/download/open_albert.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_albert.tar
     tar xf general_perf/download/open_albert.tar -C general_perf/model_zoo/popular/ 
-elif [ $1 == "roformer-tf-fp32" ]; then
+elif [ $1 == "roformer-tf-fp32" -o $1 == "roformer-tf-fp16" ]; then
     wget -O general_perf/download/open_roformer.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_roformer.tar
     tar xf general_perf/download/open_roformer.tar -C general_perf/model_zoo/popular/
-elif [ $1 == "videobert-onnx-fp32" ]; then
+elif [ $1 == "videobert-onnx-fp32" -o $1 == "videobert-onnx-fp16" ]; then
     wget -O general_perf/download/open_videobert.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_videobert.tar
     tar xf general_perf/download/open_videobert.tar -C general_perf/model_zoo/popular/
-elif [ $1 == "yolov5-onnx-fp32" ]; then
+elif [ $1 == "yolov5-onnx-fp32" -o $1 == "yolov5-onnx-fp16" ]; then
     wget -O general_perf/download/open_yolov5.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_yolov5.tar
     tar xf general_perf/download/open_yolov5.tar -C general_perf/model_zoo/popular/
-elif [ $1 == "conformer-encoder-onnx-fp32" ]; then
+elif [ $1 == "conformer-encoder-onnx-fp32" -o $1 == "conformer-encoder-onnx-fp16" ]; then
     wget -O general_perf/download/open_conformer.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_conformer.tar
     tar xf general_perf/download/open_conformer.tar -C general_perf/model_zoo/popular/
-elif [ $1 == "roberta-torch-fp32" ]; then
+elif [ $1 == "roberta-torch-fp32" -o $1 == "roberta-torch-fp16" ]; then
     wget -O general_perf/download/open_roberta.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_roberta.tar
     tar xf general_perf/download/open_roberta.tar -C general_perf/model_zoo/popular/
-elif [ $1 == "deberta-torch-fp32" ]; then
+elif [ $1 == "deberta-torch-fp32" -o $1 == "deberta-torch-fp16" ]; then
     wget -O general_perf/download/open_deberta.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open_deberta.tar
     tar xf general_perf/download/open_deberta.tar -C general_perf/model_zoo/popular/
-elif [ $1 == "swin-large-torch-fp32" ]; then
+elif [ $1 == "swin-large-torch-fp32" -o $1 == "swin-large-torch-fp16" ]; then
     wget -O general_perf/download/open-swin-large.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/open-swin-large.tar
     tar xf general_perf/download/open-swin-large.tar -C general_perf/model_zoo/popular/
 #--Sota Model--
-elif [ $1 == "vae-encoder-onnx-fp32" -o $1 == "vae-decoder-onnx-fp32" -o $1 == "clip-onnx-fp32" ]; then
+elif [ $1 == "vae-encoder-onnx-fp32" -o $1 == "vae-decoder-onnx-fp32" -o $1 == "clip-onnx-fp32" -o $1 == "vae-encoder-onnx-fp16" -o $1 == "vae-decoder-onnx-fp16" -o $1 == "clip-onnx-fp16"]; then
     wget -O general_perf/download/stable_diffusion.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/stable_diffusion.tar
     tar xf general_perf/download/stable_diffusion.tar -C general_perf/model_zoo/sota/
-elif [ $1 == "unet-onnx-fp32" ]; then
+elif [ $1 == "unet-onnx-fp32" -o $1 == "unet-onnx-fp16" ]; then
     wget -O general_perf/download/unet.tar https://lf-bytemlperf.17mh.cn/obj/bytemlperf-zoo/unet.tar
     tar xf general_perf/download/unet.tar -C general_perf/model_zoo/sota/
 fi

@@ -1,0 +1,10 @@
+matplotlib
+scikit-learn
+opencv-python-headless
+bert-tensorflow==1.0.1
+onnx
+tensorflow
+sentencepiece
+tf2onnx
+six==1.15.0
+protobuf==3.20.2
